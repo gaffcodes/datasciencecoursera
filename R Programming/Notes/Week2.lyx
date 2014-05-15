@@ -1,0 +1,2413 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+R Programming: Week 2
+\end_layout
+
+\begin_layout Date
+May 14, 2014
+\end_layout
+
+\begin_layout Author
+Michael Gaffney
+\end_layout
+
+\begin_layout Part*
+Control Structures
+\end_layout
+
+\begin_layout Standard
+Control structures in R allow you to control the flow of execution of the
+ program, depending on runtime conditions.
+ Most control structures are not used in interactive sessions, but rather
+ when writing functions and longer expressions.
+\end_layout
+
+\begin_layout Paragraph
+Common Structures
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+if, else
+\family default
+: testing a condition
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+for
+\family default
+: execute a loop a fixed number of times
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+while
+\family default
+: execute a loop while a condition is true
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+repeat
+\family default
+: execute an infinite loop
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+break
+\family default
+: break the execution of a loop
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+next
+\family default
+: skip an iteration of a loop
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+return
+\family default
+: exit a function
+\end_layout
+
+\begin_layout Paragraph
+if
+\end_layout
+
+\begin_layout Itemize
+Consists of a required "if" statement, an optional else clause (in R, equivalent
+ to two if statements I think), and optional "else if" clauses
+\end_layout
+
+\begin_layout Itemize
+Can put an assignment inside the structure
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+if (x>3) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	y <- 10
+\end_layout
+
+\begin_layout Plain Layout
+
+} else {
+\end_layout
+
+\begin_layout Plain Layout
+
+	y <- 0
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can also assign the structure to an object
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+y <- if(x>3) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	10
+\end_layout
+
+\begin_layout Plain Layout
+
+} else {
+\end_layout
+
+\begin_layout Plain Layout
+
+	0
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+for
+\end_layout
+
+\begin_layout Itemize
+for loops take an iterator variable and assign it to successive values from
+ a sequence or vector.
+ Most commonly used for iterating over the elements of an object (list,
+ vector, etc.)
+\end_layout
+
+\begin_layout Itemize
+This example takes i variable and in each iteration gives values 1, 2, 3,
+ ..., 10, then exits.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+for(i in 1:10) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	print(i)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Many different ways of iterating with for.
+ The following loops are equivalent:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+x <- c("a", "b", "c", "d")
+\end_layout
+
+\begin_layout Plain Layout
+
+#create and iterate through integer index sequence
+\end_layout
+
+\begin_layout Plain Layout
+
+for(i in 1:4) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	print(x[i])
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#seq_along takes a vector and creates integer sequence index
+\end_layout
+
+\begin_layout Plain Layout
+
+for(i in seq_along(x)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	print(x[i])
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#index takes values from vector itself
+\end_layout
+
+\begin_layout Plain Layout
+
+for(letter in x) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	print(letter)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#same as 1st; curly braces not needed if single expression
+\end_layout
+
+\begin_layout Plain Layout
+
+for(i in 1:4) print(x[i])
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+Nested for loops
+\end_layout
+
+\begin_layout Itemize
+for loops can be nested, as is common with matrices.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+x<-matrix(1:6, 2, 3)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#seq_len takes integer length and creates integer sequence
+\end_layout
+
+\begin_layout Plain Layout
+
+for(i in seq_len(nrow(x))) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	for(j in seq_len(ncol(x))) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		print(x[i, j])
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Nesting beyond 2-3 levels is often very difficult to read and understand.
+\end_layout
+
+\begin_layout Paragraph
+while
+\end_layout
+
+\begin_layout Itemize
+while loops begin by testing a condition.
+ If it is true, then they exeute the loop body.
+ Once the loop body is executed, the condition is tested again, and so forth.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Useful because easy to read
+\end_layout
+
+\begin_layout Itemize
+Must write carefully, because can result in infinite loops
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+count <- 0	#initiates index variable
+\end_layout
+
+\begin_layout Plain Layout
+
+while(count < 10) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	print(count)
+\end_layout
+
+\begin_layout Plain Layout
+
+	count <- count + 1  #increment index
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Can test more than one condition
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Always evaluated from left to right
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+z <- 5
+\end_layout
+
+\begin_layout Plain Layout
+
+while(x>=3 && z<=10) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	print(z)
+\end_layout
+
+\begin_layout Plain Layout
+
+	coin <-rbinom(1, 1, 0.5)
+\end_layout
+
+\begin_layout Plain Layout
+
+	if (coin == 1) { ##random walk
+\end_layout
+
+\begin_layout Plain Layout
+
+		z <- z+1
+\end_layout
+
+\begin_layout Plain Layout
+
+	} else {
+\end_layout
+
+\begin_layout Plain Layout
+
+		z <- z-1
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+repeat
+\end_layout
+
+\begin_layout Itemize
+Initiates an infinite loop.
+ Only way to exit is to call 
+\family typewriter
+break.
+ 
+\family default
+Not commonly used, but has uses, e.g.
+ iterative objective function with a tolerance check.
+\end_layout
+
+\begin_layout Itemize
+No guarantee of stopping.
+ At minimum, requires an algorithm guaranteed to converge.
+ Generally hard to predict how long will run for, which is dependent on
+ tolerance.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Usually better to set a hard limit on the number of iterations, e.g., with
+ a for loop, then report on whether or not convergence achieved.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+x0 <- 1
+\end_layout
+
+\begin_layout Plain Layout
+
+tol <- 1e-3
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+repeat {
+\end_layout
+
+\begin_layout Plain Layout
+
+	x1 <- computeEstimate()
+\end_layout
+
+\begin_layout Plain Layout
+
+	if(abs(x1 - x0) < tol) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		break
+\end_layout
+
+\begin_layout Plain Layout
+
+	} else {
+\end_layout
+
+\begin_layout Plain Layout
+
+		x0 <- x1
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+next, return
+\end_layout
+
+\begin_layout Itemize
+next is used to skip an iteration of a loop
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+for(i in 1:100) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	if(i <= 20) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		##Skip the first 20 iterations
+\end_layout
+
+\begin_layout Plain Layout
+
+		next
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	##Do something here
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+return
+\family default
+ signals that a function should exit and return a given value.
+\end_layout
+
+\begin_layout Paragraph
+Summary
+\end_layout
+
+\begin_layout Itemize
+Control structures allow control of the flow of an R program
+\end_layout
+
+\begin_layout Itemize
+Infinite loops should generally be avoided, even if theoretically correct
+\end_layout
+
+\begin_layout Itemize
+Control structures mentioned here are primarily useful for writing programs;
+ for interactive work the *apply functions are more useful.
+\end_layout
+
+\begin_layout Part*
+Functions
+\end_layout
+
+\begin_layout Subsection*
+Introduction
+\end_layout
+
+\begin_layout Standard
+Functions are created using the 
+\family typewriter
+function()
+\family default
+ directive and are stored as R objects just like anything else.
+ Specifically, they are R objects of class "function".
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+f <- function(<arguments>) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	##function body
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Functions in R are "first class objects", meaning they can be treated much
+ like any other R object
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Functions can be passed as arguments to other functions (composition?)
+\end_layout
+
+\begin_layout Itemize
+Functions can be nested, i.e., can define a function inside of another function.
+ 
+\end_layout
+
+\begin_layout Itemize
+The return value of a function is the last expression in the function body
+ to be evaluated.
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Arguments
+\end_layout
+
+\begin_layout Itemize
+Functions have 
+\emph on
+named arguments
+\emph default
+ which potentially have 
+\emph on
+default values
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\emph on
+formal arguments
+\emph default
+ are the arguments included in the function definition
+\end_layout
+
+\begin_layout Itemize
+The 
+\family typewriter
+formals
+\family default
+ function returns a list of all the formal arguments of a function
+\end_layout
+
+\begin_layout Itemize
+Not every function call in R makes use of all the formal arguments
+\end_layout
+
+\begin_layout Itemize
+Function arguments can be 
+\emph on
+missing
+\emph default
+ or might have default values.
+\end_layout
+
+\begin_layout Paragraph
+Defining a Function
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+f <- function(a, b = 1, c = 2, d = NULL) {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In addition to not specifying a default value, you can also set an argument
+ value to 
+\family typewriter
+NULL.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+R function arguments can be matched positionally or by name.
+ Usually not a good idea to mess around with the order of arguments, because
+ it's confusing, but it is legal, so the following calls are all equivalent:
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+mydata <- rnorm(100)
+\end_layout
+
+\begin_layout Plain Layout
+
+sd(mydata)
+\end_layout
+
+\begin_layout Plain Layout
+
+sd(x=mydata)
+\end_layout
+
+\begin_layout Plain Layout
+
+sd(x=mydata, na.rm=FALSE)
+\end_layout
+
+\begin_layout Plain Layout
+
+sd(na.rm = FALSE, x=mydata)
+\end_layout
+
+\begin_layout Plain Layout
+
+sd(na.rm = FALSE, mydata) #can do because only two arguments
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Named arguments are useful on the command line when have a long argument
+ list and want to use the defaults for everything except for an argument
+ near the end of the list
+\end_layout
+
+\begin_layout Itemize
+Named arguments also useful if can remember the name, but not position,
+ of argument, e.g., plotting functions which have tons of arguments.
+\end_layout
+
+\begin_layout Itemize
+You can mix positional matching with matching by name, which is useful with
+ long argument lists.
+ When an argument is matched by name, it is taken out of the argument list
+ and the remaining unnamed arguments are matched in the order that they
+ are listed in the function definition.
+ So the following two calls are equivalent:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>args(lm)
+\end_layout
+
+\begin_layout Plain Layout
+
+function(formula, data, subset, weights, na.action, method="qr", model=TRUE,
+ x=FALSE, y=FALSE, qr=TRUE, singular.ok = TRUE, contrasts=NULL, offset, ...)
+\end_layout
+
+\begin_layout Plain Layout
+
+>lm(data = mydata, y-x, model=FALSE, 1:100)
+\end_layout
+
+\begin_layout Plain Layout
+
+>lm(y-x, mydata, 1:100, model=FALSE)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Function arguments can be 
+\emph on
+partially matched
+\emph default
+, which is useful for interactive work.
+ Means don't need to type complete name, as long as there is a unique match.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Order of operations when matching an argument is:
+\end_layout
+
+\begin_layout Enumerate
+Check for exact match for a named argument
+\end_layout
+
+\begin_layout Enumerate
+Check for a partial match
+\end_layout
+
+\begin_layout Enumerate
+Check for a positional match
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subparagraph
+Lazy Evaluation
+\end_layout
+
+\begin_layout Standard
+Arguments to functions are evaluated 
+\emph on
+lazily
+\emph default
+, so they are evaluated only as needed.
+ 
+\end_layout
+
+\begin_layout Itemize
+In this example, the function never actually uses the argument b, so calling
+ f(2) will not produce an error because the 2 gets positionally matched
+ to a.
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+f<-function(a,b) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	a^2
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+f(2)
+\end_layout
+
+\begin_layout Plain Layout
+
+##[1] 4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In this, example, "45" gets printed before the error is triggered, because
+ b did not have to be evaluated until after print(a).
+ Once the function tries to evaluate print(b), it has to throw an error.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+f<-function(a,b) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	print(a)
+\end_layout
+
+\begin_layout Plain Layout
+
+	print(b)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+f(45)
+\end_layout
+
+\begin_layout Plain Layout
+
+##[1] 45
+\end_layout
+
+\begin_layout Plain Layout
+
+##Error: argument "b" is missing, with no default.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subparagraph
+The "..." Argument
+\end_layout
+
+\begin_layout Standard
+The ...
+ argument indicate a variable number of arguments that are usually passed
+ on to other functions.
+\end_layout
+
+\begin_layout Itemize
+...
+ is often used when extending another function and you don't want to copy
+ the entire argument list of the original function
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+myplot <- function(x,y, type="1", ...) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	plot(x,y,type=type, ...)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Generic functions use ...
+ so that extra arguments can be passed to methods (generic functions don't
+ do anything, except for dispatching methods in OOP)
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>mean
+\end_layout
+
+\begin_layout Plain Layout
+
+function(x, ...)
+\end_layout
+
+\begin_layout Plain Layout
+
+UseMethod("mean"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The ...
+ argument is also needed when the number of arguments passed to the function
+ cannot be known in advance.
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>args(paste)
+\end_layout
+
+\begin_layout Plain Layout
+
+function(..., sep=" ", collapse=NULL)  #concatenates a variable number of strings
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+>args(cat)
+\end_layout
+
+\begin_layout Plain Layout
+
+function(..., file="", sep=" ", fill=FALSE, labels=NULL, append=FALSE)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+One catch with ...
+ is that any arguments that appear 
+\emph on
+after 
+\emph default
+...
+ on the argument list must be named explicitly and cannot be partially matched.
+ Can't use positional or partial matching for arguments that come after
+ ..., because no way for R to know if passing to ...
+ or a different arg.
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>args(paste)
+\end_layout
+
+\begin_layout Plain Layout
+
+function(..., sep=" ", collapse=NULL)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+>paste("a", "b", sep=":")
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] "a:b"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+>paste("a", "b", se=":") #se not partially matched to sep
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] "a b :"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Coding Standards
+\end_layout
+
+\begin_layout Enumerate
+Always use text files (typically ASCII, at least in US and UK) and a text
+ editor, because least common denominator, and can be read by everybody.
+ RStudio does this by default.
+\end_layout
+
+\begin_layout Enumerate
+Indent code.
+ Idea that different blocks should be spaced to right differently to reflect
+ flow.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Improves readability
+\end_layout
+
+\begin_layout Enumerate
+By default, RStudio indents one space, which sucks.
+ Change this in Preferences->Code Editing->Tab Width.
+ At minimum, 4 spaces; 8 spaces is ideal.
+ Select code and hit CTRL-I to indent.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Limit width of code / fix line length (80 columns?)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Prevents lots of nesting and very long functions, which hinder readability
+\end_layout
+
+\begin_layout Enumerate
+In RStudio, can be changed with Preferences->Code Editing
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Limit the length of individual functions.
+ Theoretically can go on forever, but should limit to one basic activity.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Nice to have entire function on a single page / screen
+\end_layout
+
+\begin_layout Enumerate
+Helps debugging
+\end_layout
+
+\end_deeper
+\begin_layout Part*
+Scoping Rules
+\end_layout
+
+\begin_layout Paragraph
+Binding Values to Symbol
+\end_layout
+
+\begin_layout Standard
+How does R know which value to assign to which symbol? E.g., when run
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>lm <- function(x) {x * x}
+\end_layout
+
+\begin_layout Plain Layout
+
+>lm
+\end_layout
+
+\begin_layout Plain Layout
+
+function(x) {x * x}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+how does R know what value to assign to lm? Why doesn't it give the value
+ of lm that's in the 
+\series bold
+stats
+\series default
+ package?
+\end_layout
+
+\begin_layout Standard
+When R tries to bind a value to a symbol, it searches through a series of
+ 
+\family typewriter
+environments
+\family default
+ to find the appropriate value.
+ When working at command line and need to retrieve the value of an R obkect,
+ the order is roughly
+\end_layout
+
+\begin_layout Enumerate
+Search the global environment for a symbol name matching the one requested.
+\end_layout
+
+\begin_layout Enumerate
+Search the namespaces of each of the packages on the search list, which
+ can be found by calling 
+\family typewriter
+search()
+\end_layout
+
+\begin_layout Itemize
+The 
+\emph on
+global environment
+\emph default
+ (the user's workspace) is always the first element of the search list,
+ and the 
+\series bold
+base
+\series default
+ package is always the last.
+\end_layout
+
+\begin_layout Itemize
+Order of packages on the search list matters
+\end_layout
+
+\begin_layout Itemize
+Users can configure which packages get loaded on startup, so cannot assume
+ that there will be a set list of packages available.
+\end_layout
+
+\begin_layout Itemize
+When a user loads a package with 
+\family typewriter
+library
+\family default
+ the namespace of that package gets put in position 2 of the search list
+ (by default) and everything else gets shifted down the list.
+\end_layout
+
+\begin_layout Itemize
+Note that R has separate namespaces for functions and non-functions, so
+ it's possible to have an object named c and a function named c.
+\end_layout
+
+\begin_layout Paragraph
+Scoping Rules
+\end_layout
+
+\begin_layout Itemize
+The 
+\emph on
+scoping rules
+\emph default
+ for R are the main feature that make it different from S
+\end_layout
+
+\begin_layout Itemize
+The scoping rules determine how a value is associated with a free variable
+ in a function
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider the following function:
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+f <- function(x,y) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	x^2 + y / z
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+It has two formal arguments--x and y.
+ In the body of the function there is another symbol z, which in this case
+ is called a 
+\emph on
+free variable
+\emph default
+.
+ Free variables are not formal arguments and are not 
+\emph on
+local variables
+\emph default
+ (which are assigned inside the function body)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+R uses 
+\emph on
+lexical scoping 
+\emph default
+or 
+\emph on
+static scoping.
+
+\emph default
+ A common alternative is 
+\emph on
+dynamic scoping.
+\end_layout
+
+\begin_layout Itemize
+Related to the scoping rules is how R uses the search 
+\emph on
+list
+\emph default
+ to bind a value to a symbol
+\end_layout
+
+\begin_layout Itemize
+Lexical scoping is particularly useful for simplifying statistical computations.
+\end_layout
+
+\begin_layout Paragraph
+Lexical Scoping
+\end_layout
+
+\begin_layout Standard
+Lexical scoping in R means that 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+the values of free variables are searched for in the environment in which
+ the function was defined.
+\end_layout
+
+\begin_layout Standard
+What is an environment?
+\end_layout
+
+\begin_layout Itemize
+An 
+\emph on
+environment 
+\emph default
+is a collection of (symbol, value) pairs, e.g., x is a symbol and 3.14 might
+ be its value.
+\end_layout
+
+\begin_layout Itemize
+Every environment has a parent environment; an environment may have multiple
+ "children".
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The only environment without a parent is the empty environment.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Each package has a namespace, which is like an environment
+\end_layout
+
+\begin_layout Itemize
+A function + an environment = 
+\emph on
+a closure
+\emph default
+ or 
+\emph on
+function closure
+\end_layout
+
+\begin_layout Standard
+How is the value of the free variable searched for?
+\end_layout
+
+\begin_layout Itemize
+If the value of a symbol is not found in the environment in which a function
+ was defined, then the search is continued in the 
+\emph on
+parent environment.
+\end_layout
+
+\begin_layout Itemize
+The search continues down the sequence of parent environments until hitting
+ the 
+\emph on
+top-level environment; 
+\emph default
+this is usually the global environment (workspace) or the namespace of a
+ package.
+\end_layout
+
+\begin_layout Itemize
+After the top-level environment, the search continues down the search list
+ until hitting the 
+\emph on
+empty environment
+\emph default
+.
+ If a value for a given symbol cannot be found once the empty environment
+ is searched, then an error is thrown.
+\end_layout
+
+\begin_layout Standard
+Why does this matter?
+\end_layout
+
+\begin_layout Itemize
+Typically, a function is defined in the global environment, so that the
+ values of free variables are just found in the user's workspace.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This behavior is logical for most people, and usually the "right thing"
+ to do.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+However, in R (unlike C) you can have functions defined 
+\emph on
+inside other functions--
+\emph default
+in this case the environment in which a function is defined is the body
+ of another function.
+ Can be thought of as 
+\emph on
+constructor 
+\emph default
+functions
+\emph on
+.
+ 
+\emph default
+In this example, another function is returned as its value:
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+make.power <- function(n) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	pow <- function(x) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		x^n
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	pow
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+>cube <- make.power(3)
+\end_layout
+
+\begin_layout Plain Layout
+
+>square <- make.power(2)
+\end_layout
+
+\begin_layout Plain Layout
+
+>cube(3)
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 27
+\end_layout
+
+\begin_layout Plain Layout
+
+>square(3)
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 9
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Exploring a Function Closure
+\end_layout
+
+\begin_layout Standard
+What's in a function's environment?
+\end_layout
+
+\begin_layout Standard
+Call 
+\family typewriter
+ls() 
+\family default
+on 
+\family typewriter
+environment(func) 
+\family default
+to see what's in the environment, and 
+\family typewriter
+get()
+\family default
+ on a symbol and environment to get the value of that symbol.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>ls(environment(cube))
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] "n" "pow"
+\end_layout
+
+\begin_layout Plain Layout
+
+>get("n", environment(cube))
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 3
+\end_layout
+
+\begin_layout Plain Layout
+
+>ls(environment(square))
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] "n" "pow"
+\end_layout
+
+\begin_layout Plain Layout
+
+>get("n", environment(square))
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Lexical vs.
+ Dynamic Scoping
+\end_layout
+
+\begin_layout Standard
+Given
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+y <- 10
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+f <- function(x) {   
+\end_layout
+
+\begin_layout Plain Layout
+
+	y <- 2
+\end_layout
+
+\begin_layout Plain Layout
+
+	y^2 + g(x)   ##y and g are free variables
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+g <- function(x) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	x*y		##y is a free variable
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+what is the value of 
+\family typewriter
+f(3)?
+\end_layout
+
+\begin_layout Itemize
+With lexical scoping the value of y in the function g is 
+\emph on
+looked up in the environment in which the function was defined
+\emph default
+, in this case the global environment, so the value of y is 10.
+\end_layout
+
+\begin_layout Itemize
+With dynamic scoping, the value of y is looked up in the environment from
+ which the function was 
+\emph on
+called
+\emph default
+ (sometimes referred to as the 
+\emph on
+calling environment--
+\emph default
+in R this is known as the 
+\emph on
+parent frame
+\emph default
+).
+ So the value of y would be 2.
+\end_layout
+
+\begin_layout Itemize
+When a function is 
+\emph on
+defined
+\emph default
+ in the global environment and is subsequently 
+\emph on
+called
+\emph default
+ from the global environment, then the defining environment and the calling
+ environment are the same.
+ This can sometimes give the appearance of dynamic scoping.
+ E.g.
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>g <- function(x) {
+\end_layout
+
+\begin_layout Plain Layout
+
++ a <- 3
+\end_layout
+
+\begin_layout Plain Layout
+
++ x+a+y	#y is free variable
+\end_layout
+
+\begin_layout Plain Layout
+
++}
+\end_layout
+
+\begin_layout Plain Layout
+
+>g(2)
+\end_layout
+
+\begin_layout Plain Layout
+
+Error in g(2): object "y" not found
+\end_layout
+
+\begin_layout Plain Layout
+
+>y<-3
+\end_layout
+
+\begin_layout Plain Layout
+
+>g(2)
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 8
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Other languages that support lexical scoping include Scheme, Perl, Python,
+ and Common Lisp (all languages converge to Lisp)
+\end_layout
+
+\begin_layout Paragraph
+Consequences of Lexical Scoping
+\end_layout
+
+\begin_layout Itemize
+In R, all objects must be stored in memory.
+\end_layout
+
+\begin_layout Itemize
+All functions must carry a pointer to their respective defining environments,
+ which could be literally anywhere.
+\end_layout
+
+\begin_layout Itemize
+In S-PLUS, free variables are always looked up in the global workspace,
+ so everything can be stored on the disk because the "defining environment"
+ of all functions is the same.
+\end_layout
+
+\begin_layout Part*
+Vectorized Operations
+\end_layout
+
+\begin_layout Standard
+Makes it easy to write code without looping, etc.
+ Commonly found in computational languages, e.g., MATLAB
+\end_layout
+
+\begin_layout Itemize
+Many operations in R are 
+\emph on
+vectorized, 
+\emph default
+meaning they can happen in parallel, making code more efficient, concise,
+ and readable.
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>x <- 1:4; y <- 6:9
+\end_layout
+
+\begin_layout Plain Layout
+
+>x+y
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 7 9 11 13
+\end_layout
+
+\begin_layout Plain Layout
+
+> x > 2
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] FALSE FALSE TRUE TRUE
+\end_layout
+
+\begin_layout Plain Layout
+
+> x >= 2
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] FALSE TRUE TRUE TRUE
+\end_layout
+
+\begin_layout Plain Layout
+
+> y == 8
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] FALSE FALSE TRUE FALSE
+\end_layout
+
+\begin_layout Plain Layout
+
+> x*y
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 6 14 24 36
+\end_layout
+
+\begin_layout Plain Layout
+
+> x/y
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 0.16666667 0.2857143  0.3750000  0.4444444
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Vectorized Matrix Operations are also possible: 
+\family typewriter
+* and / 
+\family default
+result in element-wise multiplication (division), while 
+\family typewriter
+%*% 
+\family default
+results in true matrix multiplication.
+\end_layout
+
+\begin_layout Part*
+Dates and Times in R
+\end_layout
+
+\begin_layout Standard
+R has developed a special representation of dates and times.
+\end_layout
+
+\begin_layout Paragraph
+Dates
+\end_layout
+
+\begin_layout Itemize
+Dates are represented by the 
+\family typewriter
+Date
+\family default
+ class
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Stored internally as the number of days since 1970-01-01
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Dates can be coerced from a character string using the 
+\family typewriter
+as.Date()
+\family default
+ function
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>x <- as.Date("1970-01-01")
+\end_layout
+
+\begin_layout Plain Layout
+
+>x
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] "1970-01-01"
+\end_layout
+
+\begin_layout Plain Layout
+
+>unclass(x)
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 0
+\end_layout
+
+\begin_layout Plain Layout
+
+>unclass(as.Date("1970-01-02")
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Times
+\end_layout
+
+\begin_layout Itemize
+Times are represented by the 
+\family typewriter
+POSIXct
+\family default
+ or the 
+\family typewriter
+POSIXlt
+\family default
+ class
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Times are stored internally as the number of seconds since 1970-01-01
+\end_layout
+
+\begin_layout Itemize
+POSIX is a data standard
+\end_layout
+
+\begin_layout Itemize
+POSIXct is just a very large 
+\emph on
+integer
+\emph default
+ under the hood; useful when want to store times in something like a data
+ frame (think POSIX count)
+\end_layout
+
+\begin_layout Itemize
+POSIXlt is a 
+\emph on
+list
+\emph default
+ underneath and it stores a bunch of other useful information like the day
+ of the week, day of the year, month, day of the month.
+ (think POSIX list)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Times can be coerced from a character string using the 
+\family typewriter
+as.POSIXlt
+\family default
+ or 
+\family typewriter
+as.POSIXct
+\family default
+ function
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>x <- Sys.time()  #already in POSIXct format
+\end_layout
+
+\begin_layout Plain Layout
+
+>x
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] "2013-01-24 22:04:14 EST"
+\end_layout
+
+\begin_layout Plain Layout
+
+>unclass(x)
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 1359083054
+\end_layout
+
+\begin_layout Plain Layout
+
+>x$sec
+\end_layout
+
+\begin_layout Plain Layout
+
+Error: $ operator is invalid for atomic vectors #integer
+\end_layout
+
+\begin_layout Plain Layout
+
+>p <- as.POSIXlt(x)
+\end_layout
+
+\begin_layout Plain Layout
+
+>names(unclass(p))   #recall POSIXlt is a list, so names
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] "sec" "min" "hour" "mday" "mon"
+\end_layout
+
+\begin_layout Plain Layout
+
+[6] "year" "wday" "yday" "isdst"
+\end_layout
+
+\begin_layout Plain Layout
+
+>p$sec
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 14.34
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+strptime
+\family default
+ function is used if dates are written in a different format; check ?strptime
+ for exactly what formatting strings to use to convert
+\end_layout
+
+\begin_layout Paragraph
+Working with Dates and Times
+\end_layout
+
+\begin_layout Itemize
+There are a number of generic functions that work on dates and times
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\family typewriter
+weekdays:
+\family default
+ give the day of the week
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+months:
+\family default
+ give the month name
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+quarters: 
+\family default
+give the quarter number ("Q1",...)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+You can use + and - on dates and times, and do comparisons.
+ Can't always mix different classes when doing so, as in this example:
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>x <- as.Date("2012-01-01")
+\end_layout
+
+\begin_layout Plain Layout
+
+>y <- strptime("9 Jan 2011 11:34:21", "%d %b %Y %H:%M:%S)
+\end_layout
+
+\begin_layout Plain Layout
+
+>x-y
+\end_layout
+
+\begin_layout Plain Layout
+
+Warning: incompatible methods for "-"
+\end_layout
+
+\begin_layout Plain Layout
+
+Error: non-numeric argument to binary operator
+\end_layout
+
+\begin_layout Plain Layout
+
+>x <- as.POSIXlt(x)
+\end_layout
+
+\begin_layout Plain Layout
+
+>x-y
+\end_layout
+
+\begin_layout Plain Layout
+
+Time difference of 356.3 days
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+These operators even keep track of leap years, leap seconds, daylight savings,
+ and time zones.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+as.POSIXct accepts a tz="GMT" argument
+\end_layout
+
+\end_body
+\end_document

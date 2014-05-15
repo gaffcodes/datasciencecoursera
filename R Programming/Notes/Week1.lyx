@@ -1,0 +1,3235 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Overview and History of R
+\end_layout
+
+\begin_layout Paragraph*
+What is R?
+\end_layout
+
+\begin_layout Standard
+A dialect of S
+\end_layout
+
+\begin_layout Paragraph*
+What is S?
+\end_layout
+
+\begin_layout Itemize
+Developed by John Chambers at Bell Labs
+\end_layout
+
+\begin_layout Itemize
+Initiated in 1976 as internal statistical analysis environment, initially
+ as Fortran libraries.
+\end_layout
+
+\begin_layout Itemize
+Early versions didn't contain functions for statistical modeling
+\end_layout
+
+\begin_layout Itemize
+In 1988, it was rewritten in C to increase portability, and Version 3 was
+ released, starting to resemble the curren version.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+Statistical Models in S
+\emph default
+ (the white book) by Chambers and Hastie documents statistical analysis
+ functionality.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Version 4 was released in 1998, and is the current version
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+Programming with Data 
+\emph default
+by Chambers (green book) documents this version.
+\end_layout
+
+\begin_layout Itemize
+Fundamentals have not significantly changed.
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph*
+Historical Notes on S
+\end_layout
+
+\begin_layout Itemize
+In 1993 Bell Labs gave StatSci (now Insightful Corp.) an exclusive license
+ to develop and sell S.
+\end_layout
+
+\begin_layout Itemize
+In 2004, Insightful purchased S from Lucent (Bell Labs) for $2m, and is
+ current owner.
+\end_layout
+
+\begin_layout Itemize
+In 2006, Alcatel bought Lucent; now Alcatel-Lucent.
+\end_layout
+
+\begin_layout Itemize
+In 2008, TIBCO acquired Insightful for $25m
+\end_layout
+
+\begin_layout Itemize
+Insightful sells its implementation as S-PLUS (plus because it has GUIs,
+ etc.)
+\end_layout
+
+\begin_layout Itemize
+In 1998, S won the Association for Computing Machinery's prestigious Software
+ System Award.
+\end_layout
+
+\begin_layout Paragraph
+S Philosophy
+\end_layout
+
+\begin_layout Standard
+In 
+\emph on
+"Stages in the Evolution of S" 
+\emph default
+Chambers writes:
+\end_layout
+
+\begin_layout Standard
+"We wanted users to be able to begin in an interactive environment where
+ they did not consciously think of themselves as programming.
+ Then as their needs became clearer and their sophistication increased,
+ they should be able to slide gradually into programming, when the language
+ and systm aspects would become more important."
+\end_layout
+
+\begin_layout Subsection*
+Background on R
+\end_layout
+
+\begin_layout Paragraph*
+History of R
+\end_layout
+
+\begin_layout Itemize
+1991: Created in New Zealand by Ross Ihaka and Robert Gentleman.
+ Development documented in 1996 JCGS paper.
+\end_layout
+
+\begin_layout Itemize
+1993: First announcement of R to the public.
+\end_layout
+
+\begin_layout Itemize
+1995: Martin Mächler convinces them to use GNU General Public License.
+\end_layout
+
+\begin_layout Itemize
+1996: Public mailing lists created (R-help and R-devel)
+\end_layout
+
+\begin_layout Itemize
+1997: R Core Group formed.
+ Controls source.
+ Contains some people associated with S-PLUS.
+\end_layout
+
+\begin_layout Itemize
+2000: R version 1.0.0 released
+\end_layout
+
+\begin_layout Itemize
+2013: R version 3.0.2 released in December
+\end_layout
+
+\begin_layout Paragraph
+Features of R
+\end_layout
+
+\begin_layout Itemize
+Syntax very similar to S, so easy for S-PLUS users to switch over (though
+ nowadays R is far more common).
+\end_layout
+
+\begin_layout Itemize
+Semantics are superficially similar to S, though there are deep differences.
+\end_layout
+
+\begin_layout Itemize
+Runs on almost any standard software platform / operating system (even the
+ PS3).
+\end_layout
+
+\begin_layout Itemize
+Frequent releases (annual and bugfix); active development.
+\end_layout
+
+\begin_layout Itemize
+Quite lean for software; functionality divided into modular packages.
+\end_layout
+
+\begin_layout Itemize
+Sophisticated graphics capabilities, better than most statistics packages.
+\end_layout
+
+\begin_layout Itemize
+Useful for interactive work, but contains powerful programming language
+ for developing new tools (reflecting S' philosophy of user becoming programmer).
+\end_layout
+
+\begin_layout Itemize
+Very active and vibrant user community (R-help, R-devel, and Stackoverflow)
+\end_layout
+
+\begin_layout Itemize
+Free (in sense of beer and speech); the FSF defines some applicable freedoms:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Freedom 0: freedom to run for any purpose
+\end_layout
+
+\begin_layout Itemize
+Freedom 1: freedom to study how it works, and adapt it to own needs.
+ Access to source is a precondition of this freedom.
+\end_layout
+
+\begin_layout Itemize
+Freedom 2: freedom to redistribute copies.
+\end_layout
+
+\begin_layout Itemize
+Freedom 3: freedom to improve program, and release improvements to public,
+ benefiting the whole community.
+ Access to source is a precondition of this freedom.
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Drawbacks
+\end_layout
+
+\begin_layout Itemize
+Based on 40 year old technology
+\end_layout
+
+\begin_layout Itemize
+Little built in support for dynamic and 3D graphics, though this is improving.
+\end_layout
+
+\begin_layout Itemize
+Functionality is based on consumer demand and user contributions, so might
+ need to implement a desired method single-handedly (or pay somebody to
+ do it).
+\end_layout
+
+\begin_layout Itemize
+Objects generally must be stored in physical memory, therefore there are
+ size restrictions on what can study by default; there are advancements
+ being made, such as computers with obscene amounts of memory.
+\end_layout
+
+\begin_layout Itemize
+Not ideal for all possible situations (though this is true of all languages).
+\end_layout
+
+\begin_layout Paragraph
+Design of R System
+\end_layout
+
+\begin_layout Itemize
+Divided into two conceptual parts:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+"base" R system downloaded from CRAN
+\end_layout
+
+\begin_layout Enumerate
+everything else
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+R functionality is divided into a number of packages
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The base system contains 
+\series bold
+base
+\series default
+ package, which is required to run R and contains most fundamental functions;
+ other packages in the base system include: 
+\series bold
+utils, stats, datasets, graphics, grDevices, grid, methods, tools, parallel,
+ compiler, splines, TclTk, 
+\series default
+and 
+\series bold
+stats4.
+\end_layout
+
+\begin_layout Itemize
+Also includes "Recommend" packages which are commonly used but not critical:
+ 
+\series bold
+boot, class, cluster, codetools, foreign, KernSmooth, lattice, mgcv, nlme,
+ rpart, survival, MASS, spatial, mmet, 
+\series default
+and 
+\series bold
+Matrix.
+\end_layout
+
+\begin_layout Itemize
+There are many other packages available via CRAN and BioConductor.
+ In part because CRAN imposes restrictions to ensure the quality of packages
+ it publishes, many people host packages on their personal websites, and
+ there's no telling how many of these there are.
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Some Resources for Learning R
+\end_layout
+
+\begin_layout Itemize
+CRAN offers a number of resources:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+An Introduction to R
+\end_layout
+
+\begin_layout Itemize
+Writing R Extensions
+\end_layout
+
+\begin_layout Itemize
+R Data Import / Export
+\end_layout
+
+\begin_layout Itemize
+R Installation and Administration (mostly for building R from sources)
+\end_layout
+
+\begin_layout Itemize
+R Internals (highly technical; not for faint of heart)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Standard texts include
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Chambers (2008).
+ 
+\emph on
+Software for Data Analysis, 
+\emph default
+Springer.
+\end_layout
+
+\begin_layout Itemize
+Chambers (1998).
+ 
+\emph on
+Programming with Data, 
+\emph default
+Springer.
+\end_layout
+
+\begin_layout Itemize
+Venables & Ripley (2002).
+ 
+\emph on
+Modern Applied Statistics with S
+\emph default
+, Springer.
+\end_layout
+
+\begin_layout Itemize
+Venables & Ripley (2000).
+ 
+\emph on
+S Programming
+\emph default
+, Springer.
+\end_layout
+
+\begin_layout Itemize
+Pinheiro & Bates (2000).
+ 
+\emph on
+Mixed-Effects Models in S and S-PLUS
+\emph default
+, Springer.
+\end_layout
+
+\begin_layout Itemize
+Murrell (2005).
+ 
+\emph on
+R Graphics
+\emph default
+, Chapman & Hall / CRC Press.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Other resources:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+"
+\emph on
+Use R!"
+\emph default
+ book series by Springer
+\end_layout
+
+\begin_layout Itemize
+bibliography at http://www.r-project.org/doc/bib/R-books.html
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Getting Help
+\end_layout
+
+\begin_layout Standard
+Dos:
+\end_layout
+
+\begin_layout Itemize
+Describe goal, not just the step, because people may have a better solution
+ for what trying to do.
+\end_layout
+
+\begin_layout Itemize
+Be explicit about what trying to do.
+\end_layout
+
+\begin_layout Itemize
+Provide the minimum needed amount of information (volume is not precision).
+\end_layout
+
+\begin_layout Itemize
+Follow up
+\end_layout
+
+\begin_layout Standard
+Do not:
+\end_layout
+
+\begin_layout Itemize
+Claim that found bug; 99% of time you're wrong and look foolish
+\end_layout
+
+\begin_layout Itemize
+Grovel about homework, or post homework
+\end_layout
+
+\begin_layout Itemize
+Email multiple lists at once
+\end_layout
+
+\begin_layout Itemize
+Ask others to debug code without giving some hint as to what the problem
+ might be.
+\end_layout
+
+\begin_layout Section
+Data Types
+\end_layout
+
+\begin_layout Paragraph
+Objects
+\end_layout
+
+\begin_layout Itemize
+Everything that you manipulate in R is an object
+\end_layout
+
+\begin_layout Itemize
+R has five basic or 
+\emph on
+atomic
+\emph default
+ classes of objects:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+character
+\end_layout
+
+\begin_layout Itemize
+numeric (real numbers)
+\end_layout
+
+\begin_layout Itemize
+integer
+\end_layout
+
+\begin_layout Itemize
+complex
+\end_layout
+
+\begin_layout Itemize
+logical (TRUE/FALSE or T/F)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Most basic object in R is a vector
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+contains multiple objects, but only objects of the same class; the exception
+ is lists, which are represented as a vector, but can contain objects of
+ different classes
+\end_layout
+
+\begin_layout Itemize
+empty vectors can be created with the 
+\emph on
+vector()
+\emph default
+ function, which takes class of objects as the first arg, and number of
+ objects as second.
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Numbers
+\end_layout
+
+\begin_layout Itemize
+Numbers are generally treated as numeric objects (double precision real
+ numbers).
+\end_layout
+
+\begin_layout Itemize
+If explicitly want an integer, must specify the 
+\emph on
+L
+\emph default
+ suffix.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ex: 1 gives a numeric object, but 
+\emph on
+1L
+\emph default
+ explicitly gives integer object.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Special number Inf represents infinity, e.g., 1/0=Inf
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+Inf
+\emph default
+ can be used in ordinary calculations, e.g., 1/Inf=0
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Value NaN represents an undefined value, e.g., 0/0
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+can also be thought of as a missing value
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Attributes
+\end_layout
+
+\begin_layout Itemize
+R objects can (but don't need to) have attributes.
+\end_layout
+
+\begin_layout Itemize
+Common attributes include names, dimnames, dimensions (e.g matrices, arrays),
+ class, and length.
+ The user can also define attributes/metadata.
+\end_layout
+
+\begin_layout Itemize
+Attributes of an object can be accessed and modified with 
+\emph on
+attributes() 
+\emph default
+function.
+\end_layout
+
+\begin_layout Paragraph
+Entering Input
+\end_layout
+
+\begin_layout Itemize
+The things we type at the R prompt are called "expressions."
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ex: 
+\emph on
+<-
+\emph default
+ is the assignment operator, assigning values to symbol, as in
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+>
+\emph default
+ msg<-"hello"
+\emph on
+ 
+\emph default
+#creates a 5-element character vector called msg
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Grammar of the language determines whether an expression is complete or
+ not
+\end_layout
+
+\begin_layout Itemize
+# indicates a comment, meaning everything to the right of the # will be
+ ignored by the R engine.
+\end_layout
+
+\begin_layout Paragraph
+Evaluation
+\end_layout
+
+\begin_layout Itemize
+When a complete expression is entered at the prompt, it is "evaluated",
+ and the result returned.
+ May auto-print result.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+> 
+\emph on
+print
+\emph default
+(x)
+\end_layout
+
+\begin_layout Itemize
+[1] 5 #indicates x is a vector, and 5 is first element
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Sequences
+\end_layout
+
+\begin_layout Itemize
+The : operator is used to create integer sequences.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+> x<-1:20
+\end_layout
+
+\begin_layout Itemize
+>x
+\end_layout
+
+\begin_layout Itemize
+[1] 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+\end_layout
+
+\begin_layout Itemize
+[16] 16 17 18 19 20
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Creating Vectors
+\end_layout
+
+\begin_layout Itemize
+The 
+\emph on
+c() 
+\emph default
+function can be used to create vectors; think of c as standing for concatenate
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+> x <- c(0.5,0.6) #numerical vector
+\end_layout
+
+\begin_layout Itemize
+> x <- c(TRUE, FALSE) #logical vector; could also do c(T, F)
+\end_layout
+
+\begin_layout Itemize
+> x <- c("a", "b", "c") #character vector
+\end_layout
+
+\begin_layout Itemize
+> x <- c(1+0i, 2+4i) #complex vector
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can use 
+\emph on
+vector()
+\emph default
+ function to create vector of specified length, initialized with default
+ values
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+> x <- vector("numeric", length=10)
+\end_layout
+
+\begin_layout Itemize
+> x
+\end_layout
+
+\begin_layout Itemize
+[1] 0 0 0 0 0 0 0 0 0 0
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Mixing Objects
+\end_layout
+
+\begin_layout Itemize
+When different objects are mixed in a vector, no error is produced; "coercion"
+ occurs so that all elements are of the same class, a common class sort
+ of like the least common denominator.
+\end_layout
+
+\begin_layout Itemize
+What about the following code:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+> y <- c(1.7, "a") ##coerces 1.7 into a character
+\end_layout
+
+\begin_layout Itemize
+> y <- c(T, 2) ##coerces T into a numerical value, i.e., 1
+\end_layout
+
+\begin_layout Itemize
+> y <- c("a", T) ##coerces T into a character
+\end_layout
+
+\end_deeper
+\begin_layout Subparagraph
+Explicit Conversion
+\end_layout
+
+\begin_layout Itemize
+Objects can be explicitly coerced from one class to another using 
+\emph on
+as.*
+\emph default
+ functions, if available
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ex: > x <- 0:6
+\end_layout
+
+\begin_layout Itemize
+>class (x)
+\end_layout
+
+\begin_layout Itemize
+[1] "integer"
+\end_layout
+
+\begin_layout Itemize
+>as.numeric(x)
+\end_layout
+
+\begin_layout Itemize
+[1] 0 1 2 3 4 5 6
+\end_layout
+
+\begin_layout Itemize
+>as.logical(x)
+\end_layout
+
+\begin_layout Itemize
+[1] F T T T T T T #0 becomes false, everything else true
+\end_layout
+
+\begin_layout Itemize
+>as.character(x)
+\end_layout
+
+\begin_layout Itemize
+[1] "0" "1" "2" "3" "4" "5" "6"
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Nonsensical coercion results in NA values and a warning
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+>x <- c("a", "b", "c")
+\end_layout
+
+\begin_layout Itemize
+>as.numeric(x)
+\end_layout
+
+\begin_layout Itemize
+[1] NA NA NA
+\end_layout
+
+\begin_layout Itemize
+Warning message:
+\end_layout
+
+\begin_layout Itemize
+NAs introduced by coercion
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Matrices
+\end_layout
+
+\begin_layout Itemize
+Matrices are vectors with a dimension attribute, an integer vector (nrow,
+ ncol).
+ Can be created with 
+\emph on
+matrix() 
+\emph default
+function, and the dimensions can be obtained with 
+\emph on
+dim()
+\emph default
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+>m <- matrix
+\emph on
+(
+\emph default
+nrow = 2, ncol = 3)
+\end_layout
+
+\begin_layout Itemize
+>m
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\begin{array}{cccc}
+ & [,1] & [,2] & [,3]\\
+{}[1,] & NA & NA & NA\\
+{}[2,] & NA & NA & NA
+\end{array}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+>dim(m)
+\end_layout
+
+\begin_layout Itemize
+[1] 2 3 ##2 rows, 3 columns
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Matrices are constructed column-wise, so entries can be thought of as starting
+ in "upper left" corner, and running down columns.
+ Ex:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+>m <- matrix(1:6, nrow=2, ncol=3)
+\end_layout
+
+\begin_layout Itemize
+>m
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\begin{array}{cccc}
+ & [,1] & [,2] & [,3]\\
+{}[1,] & 1 & 3 & 5\\
+{}[2,] & 2 & 4 & 6
+\end{array}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Matrices can also be created directly from vectors by adding a dimension
+ attribute.
+ Ex:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+>m <- 1:10
+\end_layout
+
+\begin_layout Itemize
+>dim(m) <- c(2,5) ##will create a matrix with 2 rows and 5 columns
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Matrices can be created by column-binding (
+\emph on
+cbind()
+\emph default
+) or row-binding (
+\emph on
+rbind()
+\emph default
+) vectors:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+> x <- 1:3
+\end_layout
+
+\begin_layout Itemize
+> y <- 10:12
+\end_layout
+
+\begin_layout Itemize
+>rbind(x,y)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\begin{array}{cccc}
+ & [,1] & [,2] & [,3]\\
+x & 1 & 2 & 3\\
+y & 10 & 11 & 12
+\end{array}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Lists
+\end_layout
+
+\begin_layout Itemize
+Lists are a special type of vector that can contain elements of different
+ classes.
+ Created with 
+\emph on
+list()
+\emph default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+>x <- list(1, "a", TRUE, 1+4i)
+\end_layout
+
+\begin_layout Itemize
+>x
+\end_layout
+
+\begin_layout Itemize
+[[1]]
+\end_layout
+
+\begin_layout Itemize
+[1] 1
+\end_layout
+
+\begin_layout Itemize
+[[2]]
+\end_layout
+
+\begin_layout Itemize
+[1] "a"
+\end_layout
+
+\begin_layout Itemize
+[[3]]
+\end_layout
+
+\begin_layout Itemize
+[1] TRUE
+\end_layout
+
+\begin_layout Itemize
+[[4]]
+\end_layout
+
+\begin_layout Itemize
+[1] 1+4i
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+NB: double brackets around the element numbers differentiate the output
+ from vector output, and each element is a vector.
+\end_layout
+
+\begin_layout Paragraph
+Factors
+\end_layout
+
+\begin_layout Itemize
+Factor are used to represent categorical data.
+ Factors can be ordered (ranked, e.g., professor, assistant professor, etc.)
+ or unordered.
+ One can think of a factor as an integer vector where each integer has a
+ label.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Factors are treated specially by modelling functions like 
+\emph on
+lm() 
+\emph default
+an 
+\emph on
+glm().
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Using factors with labels is better than using integers because factors
+ are self-describing; having a variable that has values "Male" and "Female"
+ is better than a variable that has values 1 and 2.
+\end_layout
+
+\begin_layout Itemize
+Can be created with 
+\emph on
+factor() 
+\emph default
+function.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>x<-factor(c("yes", "yes", "no", "yes", "no"))
+\end_layout
+
+\begin_layout Plain Layout
+
+> x
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] yes yes no yes no
+\end_layout
+
+\begin_layout Plain Layout
+
+Levels: no yes
+\end_layout
+
+\begin_layout Plain Layout
+
+> table(x)
+\end_layout
+
+\begin_layout Plain Layout
+
+x
+\end_layout
+
+\begin_layout Plain Layout
+
+no yes
+\end_layout
+
+\begin_layout Plain Layout
+
+2   3
+\end_layout
+
+\begin_layout Plain Layout
+
+> unclass(x)
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 2 2 1 2 1
+\end_layout
+
+\begin_layout Plain Layout
+
+attr(,"levels")
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] "no" "yes"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+table()
+\emph default
+ returns frequency count of each of "levels"
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+unclass
+\emph default
+() removes levels attribute, returning equivalent integer vector
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The order of the levels can be set using the 
+\emph on
+levels
+\emph default
+ argument to 
+\emph on
+factor()
+\emph default
+.
+ This can be important in linear modelling because the first level is used
+ as the baseline level.
+ Unless overridden, baseline level is determined by alphabetical order.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+> x<- factor(c("yes", "yes", "no", "yes", "no"), levels=c("yes", "no"))
+\end_layout
+
+\begin_layout Plain Layout
+
+> x
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] yes yes no yes no
+\end_layout
+
+\begin_layout Plain Layout
+
+Levels: yes no #baseline is yes, because overrode
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Missing Values
+\end_layout
+
+\begin_layout Itemize
+Missing values are denoted by NA, or NaN for undefined mathematical operations.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+is.na(x) 
+\emph default
+is used to test if objects in vector x are NA; returns TRUE if object in
+ that position is NA
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+is.nan(x)
+\emph default
+ is used to test for NaN
+\end_layout
+
+\begin_layout Itemize
+NA values have a class also, so there are integer NA, character NA, etc.
+\end_layout
+
+\begin_layout Itemize
+A NaN value is also NA, but the converse is not true, i.e., NA value is not
+ necessarily also NaN
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Data Frames
+\end_layout
+
+\begin_layout Itemize
+Data frames are used to store tabular data, and are very important
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+They are represented as a special type of list where every element of the
+ list has to have the same length.
+\end_layout
+
+\begin_layout Itemize
+Each element of the list can be thought of as a column, and the length of
+ each element of the list is the number of rows.
+ However, each column doesn't have to be the same type.
+\end_layout
+
+\begin_layout Itemize
+Unlike matrices, data frames can store different classes of objects in each
+ column (just like lists); matrices must have every element be the same
+ class
+\end_layout
+
+\begin_layout Itemize
+Data frames also have a special attribute called 
+\emph on
+row.names
+\emph default
+, which is useful for annotating data.
+ For example, each row may be a subject in a study, and each row name their
+ subject ID.
+\end_layout
+
+\begin_layout Itemize
+Data frames are usually created by calling 
+\emph on
+read.table() 
+\emph default
+or 
+\emph on
+read.csv()
+\end_layout
+
+\begin_layout Itemize
+Can be converted to a matrix by calling 
+\emph on
+data.matrix()
+\emph default
+--if convert a heterogeneous data frame to a matrix, coercion will take
+ place.
+\end_layout
+
+\begin_layout Itemize
+Can also be created with 
+\emph on
+data.frame()
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+> x <- data.frame(foo=1:4, bar=c(T, T, F, F))
+\end_layout
+
+\begin_layout Plain Layout
+
+> x
+\end_layout
+
+\begin_layout Plain Layout
+
+	foo	bar
+\end_layout
+
+\begin_layout Plain Layout
+
+1	1	TRUE  #note that row names default
+\end_layout
+
+\begin_layout Plain Layout
+
+2	2	TRUE  #to integers because
+\end_layout
+
+\begin_layout Plain Layout
+
+3	3	FALSE #row.names not specified
+\end_layout
+
+\begin_layout Plain Layout
+
+4	4	FALSE
+\end_layout
+
+\begin_layout Plain Layout
+
+>nrow(x)
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 4
+\end_layout
+
+\begin_layout Plain Layout
+
+>ncol(x)
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Names
+\end_layout
+
+\begin_layout Itemize
+R objects can also have names, which is very useful writing readable code
+ and self-describing objects.
+ Access names with 
+\emph on
+names(x)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+> x <- 1:3
+\end_layout
+
+\begin_layout Plain Layout
+
+> names(x)
+\end_layout
+
+\begin_layout Plain Layout
+
+NULL
+\end_layout
+
+\begin_layout Plain Layout
+
+> names(x) <- c("foo", "bar", "norf")
+\end_layout
+
+\begin_layout Plain Layout
+
+> x
+\end_layout
+
+\begin_layout Plain Layout
+
+foo	bar	norf
+\end_layout
+
+\begin_layout Plain Layout
+
+	1	2	3
+\end_layout
+
+\begin_layout Plain Layout
+
+> names(x)
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] "foo" "bar" "norf"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Lists can also have names
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+> x <- list(a=1, b=2, c=3)
+\end_layout
+
+\begin_layout Plain Layout
+
+> x
+\end_layout
+
+\begin_layout Plain Layout
+
+$a
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$b
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 2
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$c
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Matrices can have names (
+\emph on
+dimnames(m)
+\emph default
+).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+> m <-matrix(1:4, nrow=2, ncol=2)
+\end_layout
+
+\begin_layout Plain Layout
+
+> dimnames(m) <- list(c("a", "b"), c("c", "d")) #first vector is row names,
+ second is col names
+\end_layout
+
+\begin_layout Plain Layout
+
+> m
+\end_layout
+
+\begin_layout Plain Layout
+
+	c	d
+\end_layout
+
+\begin_layout Plain Layout
+
+a	1	3
+\end_layout
+
+\begin_layout Plain Layout
+
+b	2	4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Summary of Data Types
+\end_layout
+
+\begin_layout Itemize
+atomic classes: numeric, logical, character, integer, complex
+\end_layout
+
+\begin_layout Itemize
+missing values
+\end_layout
+
+\begin_layout Itemize
+vectors, lists
+\end_layout
+
+\begin_layout Itemize
+factors
+\end_layout
+
+\begin_layout Itemize
+data frames, matrices
+\end_layout
+
+\begin_layout Itemize
+names
+\end_layout
+
+\begin_layout Section
+Subsetting
+\end_layout
+
+\begin_layout Paragraph
+Operators
+\end_layout
+
+\begin_layout Standard
+There are a number of operators that can be used to extract subsets of R
+ objects.
+\end_layout
+
+\begin_layout Itemize
+[ always returns an object of the same class as the original, i.e., if subset
+ a vector, returns a vector, if subset a list, returns a list; can be used
+ to select more than one element (with one exception).
+\end_layout
+
+\begin_layout Itemize
+[[ is used to extract elements of a list or a data frame; it can only be
+ used to extract a single element, and the class of the returned object
+ will not necessarily be a list or data frame
+\end_layout
+
+\begin_layout Itemize
+$ is used to extract elements of a list or data frame by name; semantics
+ are similar to that of [[
+\end_layout
+
+\begin_layout Subparagraph
+Example
+\end_layout
+
+\begin_layout Standard
+This example shows subsetting with a numeric index, a numeric sequence index,
+ and a logical index
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>x <- c("a", "b", "c", "c", "d", "a")
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[1]
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] "a"
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[2]
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] "b"
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[1:4]  #extract subset with index sequence
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] "a" "b" "c" "c"
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[x > "a"] #extract with logical index, according to lexicographical ordering
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] "b" "c" "c" "d"
+\end_layout
+
+\begin_layout Plain Layout
+
+>u <- x > "a" #create logical vector
+\end_layout
+
+\begin_layout Plain Layout
+
+>u
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] FALSE TRUE TRUE TRUE TRUE FALSE
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[u] #subset x with logical vector
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] "b" "c" "c" "d"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Subsetting a Matrix
+\end_layout
+
+\begin_layout Standard
+Matrices can be subsetted in the usual way with (i,j) type indices (i=row,
+ j=col)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>x <- matrix(1:6, 2, 3)
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[1,2]
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 3
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[2,1]
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Indices can also be missing
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>x[1, ]  #subset row 1
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 1 3 5
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[, 2] #subset col 2
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 3 4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+By default, when a single element of a matrix is retrieved, it is returned
+ as a vector of length 1, not a 1x1 matrix.
+ This behavior can be turned off by setting subsetting argument drop=FALSE.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>x <- matrix(1:6, 2, 3)
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[1,2] #by default returns a vector
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 3
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[1, 2, drop=FALSE] #drop arg returns a matrix
+\end_layout
+
+\begin_layout Plain Layout
+
+		[,1]
+\end_layout
+
+\begin_layout Plain Layout
+
+[1,]	3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Similarly, subsetting a single column or a single row will give you a vector,
+ not a matrix (by default).
+ Can be turned off with drop=FALSE
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>x <- matrix(1:6, 2, 3)
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[1, ]  #returns a row vector
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 1 3 5
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[1, , drop=FALSE] #drop returns 1x3 matrix
+\end_layout
+
+\begin_layout Plain Layout
+
+	[,1]	[,2]	[,3]
+\end_layout
+
+\begin_layout Plain Layout
+
+[1,]	1	3		5
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Subsetting Lists
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>x <- list(foo=1:4, bar=0.6)
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[1]  #single bracket, so returns list
+\end_layout
+
+\begin_layout Plain Layout
+
+$foo
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 1 2 3 4
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[[1]] #double bracket, so returns element, a sequence
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 1 2 3 4
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+>x$bar #returns elemented assoc with name bar
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 0.6
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[["bar"]] #equiv to $bar
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 0.6
+\end_layout
+
+\begin_layout Plain Layout
+
+>x["bar"] #returns list with element bar
+\end_layout
+
+\begin_layout Plain Layout
+
+$bar
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 0.6
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Subsetting a list by name means don't need to remember position
+\end_layout
+
+\begin_layout Itemize
+Extracting multiple elements of a list requires using [
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>x <- list(foo=1:4, bar=0.6, baz="hello")
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[c(1,3)] #returns two element list
+\end_layout
+
+\begin_layout Plain Layout
+
+$foo
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 1 2 3 4
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$baz
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] "hello"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The [[ operator can be used with 
+\emph on
+computed 
+\emph default
+indices; $ can only be used with literal names.
+ Useful when name of element is result of some computation.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>x <- list(foo=1:4, bar=0.6, baz="hello")
+\end_layout
+
+\begin_layout Plain Layout
+
+>name <- "foo"
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[[name]] ##computed index for 'foo'
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 1 2 3 4
+\end_layout
+
+\begin_layout Plain Layout
+
+>x$name  ##element 'name' doesn't exist
+\end_layout
+
+\begin_layout Plain Layout
+
+NULL
+\end_layout
+
+\begin_layout Plain Layout
+
+>x$foo
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 1 2 3 4 ##element 'foo' does exist
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph
+Subsetting Nested Elements of a List
+\end_layout
+
+\begin_layout Standard
+The [[ can take an integer sequence; think of as recursing into lists
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>x <- list(a=list(10,12,14), b=c(3.14, 2.81))
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[[c(1,3)]] 
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 14   ##third element of first list
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[[1]][[3]] #equivalent syntax
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 14   ##third element of first list
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[[c(2, 1)]]
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 3.14  ##returns first element of second list
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Partial Matching
+\end_layout
+
+\begin_layout Standard
+Partial matching of names is allowed with [[ and $.
+ Useful in command line, programs not so much.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>x <- list(aardvark = 1:5)
+\end_layout
+
+\begin_layout Plain Layout
+
+>x$a ## $ looks for name matching 'a'
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 1 2 3 4 5
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[["a"]] ##expects exact name
+\end_layout
+
+\begin_layout Plain Layout
+
+NULL
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[["a"]], exact=FALSE]] ##FALSE exact arg overrides exact matching
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 1 2 3 4 5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Removing NA Values
+\end_layout
+
+\begin_layout Standard
+A common task is to remove missing values (NAs), because most realistic
+ data has a lot of missing values.
+ Works for vector, matrix, or data frame.
+ Create logical vector of missing vectors, then subset the inverse of this
+ vector to get the good values.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>x <- c(1, 2, NA, 4, NA, 5)
+\end_layout
+
+\begin_layout Plain Layout
+
+>bad <- is.na(x)  ##true if element is missing
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[!bad] ##false if element is missing
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 1 2 4 5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+What if there are multiple objects and you want to take the subset with
+ no missing values?
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+complete.cases(x, y, ...) 
+\emph default
+returns a logical vector specifying which cases are complete, i.e., which
+ observations/rows have no missing values across the entire sequence of
+ vectors x, y, ...
+\end_layout
+
+\begin_layout Itemize
+Can be used on data frames as well
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>x <- c(1, 2, NA, 4, NA, 5)
+\end_layout
+
+\begin_layout Plain Layout
+
+>y <- c("a", "b", NA, "d", NA, "f")
+\end_layout
+
+\begin_layout Plain Layout
+
+>good <- complete.cases(x, y)
+\end_layout
+
+\begin_layout Plain Layout
+
+>good
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] TRUE TRUE FALSE TRUE FALSE TRUE
+\end_layout
+
+\begin_layout Plain Layout
+
+>x[good]
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] 1 2 4 5
+\end_layout
+
+\begin_layout Plain Layout
+
+>y[good]
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] "a" "b" "d" "f"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Reading and Writing Data
+\end_layout
+
+\begin_layout Paragraph
+Principal Functions for Reading and Writing Data in R
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+read.table, read.csv 
+\emph default
+for reading tabular data stored in text files (inverse of 
+\emph on
+write.table)
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+readLines
+\emph default
+ for reading lines of a text file, returning character vector (inverse of
+ 
+\emph on
+writeLines)
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+source 
+\emph default
+for reading in R code files (inverse of 
+\emph on
+dump
+\emph default
+)
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+dget
+\emph default
+ for reading in R code files (inverse of 
+\emph on
+dput
+\emph default
+) [deparsed files]
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+load
+\emph default
+ for reading in saved workspaces (inverse of 
+\emph on
+save)
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+unserialize
+\emph default
+ for reading single R objects in binary form (inverse of 
+\emph on
+serialize)
+\end_layout
+
+\begin_layout Subsection
+Reading Tabular Data Files with read.table
+\end_layout
+
+\begin_layout Standard
+The read.table function is one of the most commonly used functions for reading
+ data.
+\end_layout
+
+\begin_layout Subparagraph
+Important Arguments
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+file:
+\family default
+ string with the name of a file, or a connection
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+header
+\family default
+: logical indicating if the file has a header line (which obv isn't data)
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+sep
+\family default
+: a string indicating how the columns are separated, e.g., commas
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+colClasses
+\family default
+: a character vector of length ncols indicating the class of each column
+ in the dataset (not required)
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+nrows
+\family default
+: the number of rows in the dataset (not required)
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+comment.char
+\family default
+: a character string indicating the comment character (default is #) (not
+ required)
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+skip
+\family default
+: the number of lines to skip from the beginning (often want to skip header)
+ (not required)
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+stringsAsFactors
+\family default
+: should character variables be encoded as factors? default is TRUE
+\end_layout
+
+\begin_layout Standard
+For small to moderately sized datasets, you can usually call read.table only
+ specifying 
+\family typewriter
+file
+\family default
+, e.g., data <- read.table("foo.txt"), and it will automatically:
+\end_layout
+
+\begin_layout Itemize
+skip lines that begin with a #
+\end_layout
+
+\begin_layout Itemize
+figure out how many rows there are, and how much memory to allocate
+\end_layout
+
+\begin_layout Itemize
+figure what type of variable is in each column of the table
+\end_layout
+
+\begin_layout Itemize
+NB: explicitly telling R these things will make it run faster and more efficient
+ly
+\end_layout
+
+\begin_layout Standard
+read.csv is identical to read.table, except that the default separator is
+ a comma instead of a space, and always specifies header to be true
+\end_layout
+
+\begin_layout Subparagraph
+Reading in Larger Datasets with read.table
+\end_layout
+
+\begin_layout Standard
+With much larger datasets, doing the following make life easier and prevent
+ R from choking:
+\end_layout
+
+\begin_layout Itemize
+Read the help page for read.table, which has many optimization hints
+\end_layout
+
+\begin_layout Itemize
+Make a rough calculation of memory required to store dataset.
+ If dataset is larger than the amount of RAM on computer, can probably stop
+ right there.
+\end_layout
+
+\begin_layout Itemize
+Set comment.char="" if there are no commented lines in your file
+\end_layout
+
+\begin_layout Itemize
+Use the colClasses argument.
+ Specifying this instead of leaving the default can make it run up to twice
+ as fast, because R doesn't have to go through and try to figure out what
+ data type each column is.
+ Have to know the class of each column in data frame.
+ If all columns are numeric for example, can set colClasses="numeric".
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Quick and dirty way to figure out the classes of each column is to read
+ in, say, 100 rows, then use sapply to loop over each column and use class
+ function
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>initial <- read.table("table.txt", nrows=100)
+\end_layout
+
+\begin_layout Plain Layout
+
+>classes <- sapply(initial, class)
+\end_layout
+
+\begin_layout Plain Layout
+
+>tabAll <- read.table("table.txt", colClasses = classes)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Set nrows.
+ This doesn't make R run faster, but does help with memory usage, because
+ can calculate memory ahead of time.
+ A mild overestimate is OK.
+ Can use Unix tool wc to calculate number of lines in file.
+\end_layout
+
+\begin_layout Paragraph
+Things to know when using R with large datasets
+\end_layout
+
+\begin_layout Itemize
+How much memory is available?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+What other applications are in use?
+\end_layout
+
+\begin_layout Itemize
+Are there any other users logged in?
+\end_layout
+
+\begin_layout Itemize
+What operating system?
+\end_layout
+
+\begin_layout Itemize
+Is the OS 32 or 64 bit? 64 bit allows accessing more memory
+\end_layout
+
+\end_deeper
+\begin_layout Subparagraph
+Calculating memory requirements
+\end_layout
+
+\begin_layout Itemize
+Suppose have a data frame with 1,500,000 rows and 120 columns, all of which
+ are numeric.
+ How much memory is required to store this data frame?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(1,500,00 x 120) numeric elements x (8 bytes / numeric element) = 1,440,000,000
+ bytes
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+=1,440,000,000 bytes / (
+\begin_inset Formula $2^{20}$
+\end_inset
+
+ bytes/MB)
+\end_layout
+
+\begin_layout Itemize
+=1,373.29 MB
+\end_layout
+
+\begin_layout Itemize
+=1.34 GB
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Slight bit of overhead required, so rule of thumb is to double the amount
+ of memory the object itself requires
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Textual Formats
+\end_layout
+
+\begin_layout Itemize
+Two main functions for writing textual data, are 
+\family typewriter
+dump
+\family default
+ and 
+\family typewriter
+dput
+\family default
+, which produce a format different than tabular data, and include metadata
+ like class information.
+
+\family typewriter
+ dumping
+\family default
+ and 
+\family typewriter
+dputing
+\family default
+ are useful because the resulting textual format is editable (though you
+ shouldn't, because then no longer reproducible), and in the case of corruption,
+ potentially recoverable
+\end_layout
+
+\begin_layout Paragraph
+Advantages of Textual Formats
+\end_layout
+
+\begin_layout Itemize
+Unlike writing out a table or csv file, 
+\family typewriter
+dump
+\family default
+ and 
+\family typewriter
+dput
+\family default
+ preserve the metadata (sacrificing readability), so that another user doesn't
+ have to specify it all over again
+\end_layout
+
+\begin_layout Itemize
+Textual formats can work much better with version control programs, which
+ can only meaningfully track changes in text files.
+\end_layout
+
+\begin_layout Itemize
+Textual formats can be longer-lived: it is easier to fix corruption in the
+ file
+\end_layout
+
+\begin_layout Itemize
+Textual formats adhere to "Unix philosophy" (store all kinds of data in
+ text)
+\end_layout
+
+\begin_layout Paragraph
+Drawbacks of Textual Formats
+\end_layout
+
+\begin_layout Itemize
+The format is not very space-efficient, so often must be compressed
+\end_layout
+
+\begin_layout Paragraph
+dput-ting R Objects
+\end_layout
+
+\begin_layout Standard
+Another way to pass data around is by deparsing the R object with 
+\family typewriter
+dput
+\family default
+ and reading it back in with 
+\family typewriter
+dget.
+ 
+\family default
+dput takes an arbitrary R object (most kinds except some exotic ones) and
+ creates some R code that will reconstruct the object in R.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>y <- data.frame(a = 1, b = "a")
+\end_layout
+
+\begin_layout Plain Layout
+
+>dput(y)
+\end_layout
+
+\begin_layout Plain Layout
+
+structure(list(a=1,
+\end_layout
+
+\begin_layout Plain Layout
+
+	b = structure(1L, .Label="a", class = "factor")),
+\end_layout
+
+\begin_layout Plain Layout
+
+	.Names = c("a", "b"), row.names = C(NA, -1L),
+\end_layout
+
+\begin_layout Plain Layout
+
+	class = "data.frame")
+\end_layout
+
+\begin_layout Plain Layout
+
+>dput(y, file = "y.R") ##file arg saves output to R script
+\end_layout
+
+\begin_layout Plain Layout
+
+>new.y <- dget("y.R") #reconstruct object
+\end_layout
+
+\begin_layout Plain Layout
+
+>new.y
+\end_layout
+
+\begin_layout Plain Layout
+
+	a	b
+\end_layout
+
+\begin_layout Plain Layout
+
+1	1	a
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Dumping R Objects
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+dump
+\family default
+ is similar to 
+\family typewriter
+dput
+\family default
+, but 
+\family typewriter
+dump
+\family default
+ allows deparsing 
+\emph on
+multiple
+\emph default
+ objects, and reading them back in with 
+\family typewriter
+source
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>x <- "foo"
+\end_layout
+
+\begin_layout Plain Layout
+
+>y <- data.frame(a = 1, b = "a")
+\end_layout
+
+\begin_layout Plain Layout
+
+>dump(c("x", "y"), file = "data.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+>rm(x, y) ##remove x,y 
+\end_layout
+
+\begin_layout Plain Layout
+
+>source("data.R") ##reconstruct x and y
+\end_layout
+
+\begin_layout Plain Layout
+
+>y
+\end_layout
+
+\begin_layout Plain Layout
+
+	a	b
+\end_layout
+
+\begin_layout Plain Layout
+
+1	1	a
+\end_layout
+
+\begin_layout Plain Layout
+
+>x
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] "foo"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Interfaces to the Outside World
+\end_layout
+
+\begin_layout Standard
+Data are read in using 
+\emph on
+connection
+\emph default
+ interfaces.
+ Abstracts out the method of connecting.
+ Connections can be made to files (most common) or other more exotic things:
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+file 
+\family default
+opens a connection to a file
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+gzfile
+\family default
+ opens a connection to a file compressed with gzip
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+bzfile
+\family default
+ opens a connection to a file compressed with bzip2
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+url
+\family default
+ opens a connection to a webpage
+\end_layout
+
+\begin_layout Itemize
+This is usually done behind-the-scenes.
+\end_layout
+
+\begin_layout Subparagraph
+File Connections
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>str(file)
+\end_layout
+
+\begin_layout Plain Layout
+
+function (description = "", open="", blocking = TRUE, encoding = getOption("enco
+ding")
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+description
+\family default
+ is the name of the file
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+open
+\family default
+ is a code indicating
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+"r" read only
+\end_layout
+
+\begin_layout Itemize
+"w" writing (and initializing a new file)
+\end_layout
+
+\begin_layout Itemize
+"a" appending
+\end_layout
+
+\begin_layout Itemize
+"rb", "wb", "ab" doing the above in binary mode (Windows)
+\end_layout
+
+\end_deeper
+\begin_layout Subparagraph
+Connections
+\end_layout
+
+\begin_layout Itemize
+In general, connections are powerful tools that let you navigate files or
+ other external objects.
+ In practice, don't often need to deal with the connection interface directly.
+ For example, 
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+con <- file("foo.txt", "r")
+\end_layout
+
+\begin_layout Plain Layout
+
+data <- read.csv(con)
+\end_layout
+
+\begin_layout Plain Layout
+
+close(con)
+\end_layout
+
+\end_inset
+
+is equivalent to much shorter
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+data <- read.csv("foo.txt")
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Connections can be useful to read parts of a file with 
+\family typewriter
+readLines
+\family default
+:
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>con <- gzfile("words.gz")
+\end_layout
+
+\begin_layout Plain Layout
+
+>x <- readLines(con, 10)
+\end_layout
+
+\begin_layout Plain Layout
+
+>x
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] "1080"	"10-point"	"10th"	"11-point"
+\end_layout
+
+\begin_layout Plain Layout
+
+[5] "12-point" "16-point"	"18-point"	"1st"
+\end_layout
+
+\begin_layout Plain Layout
+
+[9]	"2"	"20-point"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Inversely, 
+\family typewriter
+writeLines
+\family default
+ takes a character vector and writes each element one line at a time to
+ a text file.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Connections and 
+\family typewriter
+readLines
+\family default
+ can be useful for reading in lines of webpages
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>con <- url("http://jhsph.edu", "r")
+\end_layout
+
+\begin_layout Plain Layout
+
+>x <- readLines(con)
+\end_layout
+
+\begin_layout Plain Layout
+
+>head(x)
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] "<!DOCTYPE HTML PUBLIC ....
+ >"
+\end_layout
+
+\begin_layout Plain Layout
+
+[2] ""
+\end_layout
+
+\begin_layout Plain Layout
+
+[3] "<html>"
+\end_layout
+
+\begin_layout Plain Layout
+
+[4] "<head>"
+\end_layout
+
+\begin_layout Plain Layout
+
+[5] "
+\backslash
+t<meta http..."
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+SWIRL
+\end_layout
+
+\begin_layout Standard
+http://swirlstats.com is a resource that offers interactive lessons
+\end_layout
+
+\begin_layout Standard
+Completing them offers extra credit
+\end_layout
+
+\end_body
+\end_document
